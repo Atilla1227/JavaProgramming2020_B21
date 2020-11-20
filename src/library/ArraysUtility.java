@@ -3,6 +3,7 @@ package library;
 import java.util.Arrays;
 
 public class ArraysUtility {
+
     /*
     returns the maximum number from an array of integer
      */
@@ -34,6 +35,37 @@ public class ArraysUtility {
 
 
     /*
+    returns the minimum number from an array of double
+     */
+    public static double min(double[] arr){
+        double min = arr[0];
+
+        for(double each : arr) {
+            if (each < min) {
+                min = each;
+            }
+        }
+
+        return min;
+    }
+
+
+    /*
+    returns the maximum number from an array of double
+     */
+    public static double max(double[] arr){
+        double max =arr[0];
+        for( double each  : arr ){
+            if(each > max){
+                max = each;
+            }
+        }
+        return max;
+    }
+
+
+
+    /*
     Combines two arrays of integers and return the new array
      */
     public static int[] combineTwoArrays(int[] arr1, int[] arr2){
@@ -52,6 +84,7 @@ public class ArraysUtility {
     }
 
 
+
     /*
      sorts the array of integers in descending order, and returns it as an array
      */
@@ -65,6 +98,53 @@ public class ArraysUtility {
 
         return reversedArray;
     }
+
+
+    /*
+     sorts the array of double in descending order, and returns it as an array
+     */
+    public static double[] sort(double[] arr){  // {2,1,3}
+        Arrays.sort(arr);  // {1,2,3};
+        double[] reversedArray = new double[arr.length];  // {3, 2, 1}
+
+        for(int i=arr.length-1, j = 0 ;  i>=0; i--, j++){
+            reversedArray[j] = arr[i];
+        }
+
+        return reversedArray;
+    }
+
+
+    /*
+     sorts the array of char in descending order, and returns it as an array
+     */
+    public static char[] sort(char[] arr){  // {2,1,3}
+        Arrays.sort(arr);  // {1,2,3};
+        char[] reversedArray = new char[arr.length];  // {3, 2, 1}
+
+        for(int i=arr.length-1, j = 0 ;  i>=0; i--, j++){
+            reversedArray[j] = arr[i];
+        }
+
+        return reversedArray;
+    }
+
+
+    /*
+     sorts the array of String in descending order, and returns it as an array
+     */
+    public static String[] sort(String[] arr){
+        Arrays.sort(arr);  // {1,2,3};
+        String[] reversedArray = new String[arr.length];  // {3, 2, 1}
+
+        for(int i=arr.length-1, j = 0 ;  i>=0; i--, j++){
+            reversedArray[j] = arr[i];
+        }
+
+        return reversedArray;
+    }
+
+
 
 
 
