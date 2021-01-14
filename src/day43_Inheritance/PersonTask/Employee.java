@@ -1,11 +1,13 @@
 package day43_Inheritance.PersonTask;
 
 public class Employee extends Person {  // Employee IS A Person
+
     /*
     inherited:
         variables: name, age, gender
         methods: setInfo, eat, sleep, toString
      */
+
     public double hourlyRate;
     public String jobTitle, ID;
 
@@ -20,17 +22,27 @@ public class Employee extends Person {  // Employee IS A Person
         this.jobTitle = jobTitle;
     }
 
+    public double calcSalary(){
+        return hourlyRate * 40 * 52 ;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                ", name= '" + name + '\'' +
+                "name= '" + name + '\'' +
                 ", age=" + age +
                 ", jobTitle= '" + jobTitle + '\'' +
-                "hourlyRate= $" + hourlyRate +
+                ", hourlyRate= $" + hourlyRate +
                 ", ID=' " + ID + '\'' +
                 ", gender= " + gender +
+                ", salary= $" + (int)calcSalary() +
                 '}';
     }
+
+
+    public static String publicVariable = "Public";
+    protected static String protectedVariable = "Protected";
+    static String defaultVariable = "default";
 
 
 }
